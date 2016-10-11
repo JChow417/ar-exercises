@@ -5,20 +5,14 @@ require_relative './exercise_3'
 require_relative './exercise_4'
 require_relative './exercise_5'
 require_relative './exercise_6'
+require_relative './exercise_7'
 
-puts "Exercise 7"
+puts "Exercise 8"
 puts "----------"
 
 # Your code goes here ...
 
-# store_name = gets.chomp
-# create_store = Store.create(name: store_name)
+@employee1 = @store1.employees.create(first_name: "Michael", last_name: "Jordan", hourly_rate: 100)
 
-# if create_store.save
-#   puts "Success!"
-# else
-#   create_store.errors.messages.each {|key, value| puts "#{key.to_s} #{value[0]}"}
-# end
-
-
+puts "The password is #{@employee1.password}"
 
