@@ -5,11 +5,9 @@ class Employee < ActiveRecord::Base
   validates_inclusion_of :hourly_rate, in: 40..200
   validates :store, presence: true
 
-  before_create do
-    self.password = generate_password
-  end
+  before_create {self.password = generate_password}
 
-  protected
+  private
     def generate_password
       characters = [('0'..'9'),('A'..'Z'),('a'..'z')].map { |i| i.to_a }.flatten
       password = (0...8).map{ characters[rand(characters.length)] }.join
